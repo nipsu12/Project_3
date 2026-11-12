@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musiikin tietäjät - Last.fm API</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Artisti- & Albumihaku</h1>
+    
+    <div class="search-section">
+      <!-- Alasvedettävä valikko artisteille (haettu last.fm:stä)-->
+      <label for="artist-select">Valitse artisti:</label>
+      <select id="artist-select">
+        <option value="">-- Valitse listalta --</option>
+        <option value="Coldplay">Coldplay</option>
+        <option value="Queen">Queen</option>
+        <option value="Dua Lipa">Dua Lipa</option>
+        <option value="Nightwish">Nightwish</option>
+      </select>
+
+      <span class="divider">tai</span>
+
+      <!-- Artistihaku -->
+      <input type="text" id="artist-input" placeholder="Kirjoita artistin nimi...">
+      <button id="search-btn">Hae</button>
+    </div>
+
+    <!-- Tilaviestit -->
+    <div id="status-message"></div>
+
+    <!-- Artistin perustiedot -->
+    <div id="artist-info" class="artist-card"></div>
+
+    <!-- Albumilistaus -->
+    <h2>Albumit</h2>
+    <div id="albums-container" class="grid-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
