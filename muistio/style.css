@@ -1,0 +1,18 @@
+/* Selektorit: elementti (p), luokka (.kortti) ja yksilöllinen tunniste (#otsikko) */
+p { color: black; }
+.kortti { padding: 15px; border: 1px solid gray; }
+#otsikko { font-size: 24px; }
+
+/* Flexbox: asettelee elementit joustavasti rinnakkain (row) tai allekkain (column) */
+.kontti {
+    display: flex;
+    justify-content: space-between; /* Vaakasuuntainen tasaus */
+    align-items: center;            /* Pystysuuntainen tasaus */
+}
+
+/* Media Query: muuttaa tyylejä kun näytön leveys on enintään 768px (mobiilinäkymä) */
+@media (max-width: 768px) {
+    .kontti {
+        flex-direction: column; /* Muuttaa vierekkäiset elementit allekkain pienellä näytöllä */
+    }
+}
