@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Musiikin tietäjät - Last.fm API</title>
+  <title>Musiikin tietäjät - jQuery & Kirjastot</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Ulkoiset kirjastot: jQuery, Chart.js ja SweetAlert2 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <div class="container">
     <h1>Artisti- & Albumihaku</h1>
     
     <div class="search-section">
-      <!-- Alasvedettävä valikko artisteille (haettu last.fm:stä)-->
       <label for="artist-select">Valitse artisti:</label>
       <select id="artist-select">
         <option value="">-- Valitse listalta --</option>
@@ -23,19 +26,24 @@
 
       <span class="divider">tai</span>
 
-      <!-- Artistihaku -->
       <input type="text" id="artist-input" placeholder="Kirjoita artistin nimi...">
       <button id="search-btn">Hae</button>
     </div>
 
-    <!-- Tilaviestit -->
+    <!-- Tilaviestit (latausilmoituksille) -->
     <div id="status-message"></div>
 
-    <!-- Artistin perustiedot -->
-    <div id="artist-info" class="artist-card"></div>
+    <!-- Artistin perustiedot (piilotettu aluksi, näytetään fadeIn-efektillä) -->
+    <div id="artist-info" class="artist-card" style="display: none;"></div>
+
+    <!-- Chart.js -kaavio albumien kuuntelukerroille -->
+    <div id="chart-wrapper" class="chart-card" style="display: none;">
+      <h2>Suosituimmat albumit (Kuuntelukerrat)</h2>
+      <canvas id="albums-chart"></canvas>
+    </div>
 
     <!-- Albumilistaus -->
-    <h2>Albumit</h2>
+    <h2 id="albums-heading" style="display: none;">Albumit</h2>
     <div id="albums-container" class="grid-container"></div>
   </div>
 

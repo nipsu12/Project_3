@@ -205,3 +205,22 @@ h2 {
 .tracks-list li {
   margin-bottom: 4px;
 }
+
+/* Kaavion kortti */
+.chart-card {
+  background-color: #131822;
+  border: 1px solid #1e2638;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 36px;
+}
+
+.chart-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: #e1e7ed;
+}
+
+#albums-chart {
+  max-height: 280px;
+}
